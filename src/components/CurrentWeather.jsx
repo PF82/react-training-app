@@ -68,41 +68,28 @@ const CurrentWeather = () => {
             headers: {
                 'X-RapidAPI-Key': 'a74a8b5c4bmshb462c30d54fd1eep144a30jsn275f339f0895',
                 'X-RapidAPI-Host': 'open-weather13.p.rapidapi.com'
-            })
+            }
+        })
             .then(response => response.json())
             .then(response => console.log(response))
             .catch(err => console.error(err));
-
     }, [])
 
-    // const options = {
-    //     method: 'GET',
-    //     headers: {
-    //         'X-RapidAPI-Key': '',
-    //         'X-RapidAPI-Host': 'open-weather13.p.rapidapi.com'
-    //     }
-    // };
-
-    // fetch('https://open-weather13.p.rapidapi.com/city/porto', options)
-    //     .then(response => response.json())
-    //     .then(response => console.log(response))
-    //     .catch(err => console.error(err));
-
-    // if (error) {
-    //     return <div>Error: {error.message}</div>;
-    // } else if (!isLoaded) {
-    //     return <div>Loading...</div>;
-    // } else {
-    //     return (
-    //         <ul>
-    //             {items.map(item => (
-    //                 <li key={item.id}>
-    //                     {item.name} {item.price}
-    //                 </li>
-    //             ))}
-    //         </ul>
-    //     );
-    // }
+    if (error) {
+        return <div>Error: {error.message}</div>;
+    } else if (!isLoaded) {
+        return <div>Loading...</div>;
+    } else {
+        return (
+            <ul>
+                {items.map(item => (
+                    <li key={item.id}>
+                        {item.name} {item.price}
+                    </li>
+                ))}
+            </ul>
+        );
+    }
 }
 
 export default CurrentWeather
