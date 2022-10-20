@@ -1,0 +1,57 @@
+// media queries / breakpoints
+
+// mobile phones (portrait)
+@include mq(320px, 480px) {
+  main {
+    width: 300px;
+    padding: 15px;
+    padding-bottom: 40px;
+    font-size: $fs-16;
+  }
+
+  .msg {
+    padding-top: 200px;
+  }
+}
+
+// tablets (portrait)
+@include mq(481px, 920px) { // increased from 768 to 920
+  main {
+    width: 300px;
+    padding: 15px;
+    padding-bottom: 40px;
+    font-size: $fs-16;
+  }
+
+  .msg {
+    padding-top: 330px;
+  }
+}
+
+// tablets (landscape)
+@include mqminw(1200px) {
+  main {
+    width: 300px;
+    padding: 15px;
+    padding-bottom: 40px;
+    font-size: $fs-16;
+  }
+
+  .msg {
+    padding-top: 220px;
+  }
+}
+
+// tvs (portrait)
+@include mqmaxh(721px) {
+  main {
+    width: 280px;
+    height: auto;
+    color: $white;
+    font-size: $fs-12;
+  }
+
+  h1 {
+    font-size: $fs-12;
+  }
+}

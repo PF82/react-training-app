@@ -1,9 +1,13 @@
 import logo from './logo.svg';
-import './App.css';
+import './App.scss';
+import CurrentWeather from './components/CurrentWeather';
 
 function App() {
   return (
     <div className="App">
+
+      <nav></nav>
+
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
@@ -18,6 +22,13 @@ function App() {
           Learn React
         </a>
       </header>
+
+      <main>
+        <CurrentWeather/>
+      </main>
+
+      <footer></footer>
+
     </div>
   );
 }

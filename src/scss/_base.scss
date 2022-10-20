@@ -1,0 +1,239 @@
+/*
+https://www.youtube.com/watch?v=s_Ie_yh_4Co
+Note: use left and right arrows to go behind or forward
+*/
+
+/* CSS reset styles - supersed default styles */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+// body
+
+body {
+    width: 100%;
+    min-height: 100vh;
+    flex-direction: column;
+    background-color: none;
+    background-image: url("/public/img/default-image.jpg");
+    background-repeat: no-repeat;
+    background-position: fixed;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+// error message
+
+.msg {
+    display: block;
+    text-align: center;
+    padding-top: 250px;
+    color: $black;
+    border: $b-off;
+}
+
+// main
+
+main {
+    background: $background-color;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-blend-mode: overlay;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    width: auto;
+    min-height: auto;
+    margin: auto;
+    padding: 0 20px;
+    padding-bottom: 25px;
+    border-radius: 50px;
+    border: $b-off;
+}
+
+// header
+
+h1 {
+    font-size: $fs-20;
+    text-align: center;
+    margin: 0;
+    margin-top: 20px;
+}
+
+// form
+
+input[type="text"] {
+    width: 100%;
+    height: 30px;
+    margin-top: 20px;
+    padding: 8px 5px;
+    box-sizing: border-box;
+    display: block;
+    border-radius: 10px;
+    border-color: $black;
+    background-color: $white;
+    background-clip: padding-box;
+    font-size: $fs-14;
+}
+
+button {
+    width: 100%;
+    height: 30px;
+    margin-top: 10px;
+    padding-top: 2px;
+    box-sizing: border-box;
+    display: block;
+    border-radius: 10px;
+    border-color: $black;
+    background-color: $white;
+    color: $black;
+    text-decoration: none;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
+}
+
+// map icon (ajax section)
+
+#map-icon {
+    text-align: center;
+    margin-top: 10px;
+}
+
+// location / country / date & time (ajax section)
+
+#location_country {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    margin-top: 10px;
+    border: $b-off;
+}
+
+#location {
+    margin: 0;
+    border: $b-off;
+}
+
+#country {
+    padding-left: 5px;
+    padding-bottom: 10px;
+    border: $b-off;
+}
+
+#date-time {
+    text-align: center;
+    margin-top: 5px;
+    border: $b-off;
+}
+
+// weather-icon / temperature 
+
+#weather-icon_temperature {
+    display: flex;
+    flex-flow: row;
+    margin: -10px auto;
+    border: $b-off;
+}
+
+#weather_icon,
+#temp {
+    width: 50%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: $b-off;
+}
+
+// min. temperature / max. temperature / feels like temperature 
+
+#mix-temp_max-temp_feels-like {
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
+}
+
+.box {
+    flex: 1 auto 1;
+}
+
+.box1,
+.box2,
+.box3 {
+    border: $b-off;
+}
+
+.box1 {
+    text-align: right;
+}
+
+// description
+
+#descr {
+    text-align: center;
+    margin-top: 5px;
+}
+
+#descr::first-letter {
+    text-transform: uppercase;
+}
+
+// other weather data items 
+
+#other-weather-data-items {
+    width: 100%;
+    margin-top: 10px;
+    border: $b-off;
+}
+
+.sunrise,
+.sunset,
+.humidity,
+.pressure,
+.dew-point,
+.uvi,
+.visibility,
+.wind-speed,
+.wind-deg,
+.wind-gust,
+.sea-level-atmospheric-pressure,
+.grnd-level-atmospheric-pressure {
+    font-weight: bold;
+}
+
+#sunrise,
+#sunset,
+#humidity,
+#pressure,
+#dew-point,
+#uvi,
+#visibility,
+#wind-speed,
+#wind-deg,
+#wind-gust,
+#sea-level-atmospheric-pressure,
+#grnd-level-atmospheric-pressure {
+    text-align: right;
+    padding-left: 20px;
+}
+
+ul {
+    list-style: none;
+}
+
+// couple of simple classes 
+
+#none {
+    display: $d-n;
+}
+
+#block {
+    display: $d-b;
+}
