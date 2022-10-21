@@ -1,239 +1,110 @@
-/*
-https://www.youtube.com/watch?v=s_Ie_yh_4Co
-Note: use left and right arrows to go behind or forward
-*/
-
-/* CSS reset styles - supersed default styles */
-
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-// body
+// body {
+//     font-family: 'montseratt', sans-serif;
+// }
 
-body {
-    width: 100%;
-    min-height: 100vh;
-    flex-direction: column;
-    background-color: none;
-    background-image: url("/public/img/default-image.jpg");
-    background-repeat: no-repeat;
-    background-position: fixed;
-    background-attachment: fixed;
+.app {
+    background-image: url('../img/clear-sky.jpg');
     background-size: cover;
+    background-position: bottom;
+    transition: 0.4 ease-out;
 }
 
-// error message
-
-.msg {
-    display: block;
-    text-align: center;
-    padding-top: 250px;
-    color: $black;
-    border: $b-off;
+.app.snow {
+    background-image: url('../img/snow.jpg');
 }
 
-// main
+.app.rain {
+    background-image: url('../img/rain.jpg');
+}
+
+.app.night {
+    background-image: url('../img/night.jpg');
+}
 
 main {
-    background: $background-color;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-blend-mode: overlay;
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    -webkit-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
-    width: auto;
-    min-height: auto;
-    margin: auto;
-    padding: 0 20px;
-    padding-bottom: 25px;
-    border-radius: 50px;
-    border: $b-off;
+    min-height: 100vh;
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.75));
+    padding: 25px;
 }
 
-// header
-
-h1 {
-    font-size: $fs-20;
-    text-align: center;
-    margin: 0;
-    margin-top: 20px;
-}
-
-// form
-
-input[type="text"] {
+.search-box {
     width: 100%;
-    height: 30px;
-    margin-top: 20px;
-    padding: 8px 5px;
-    box-sizing: border-box;
+    margin: 0 0 75px;
+}
+
+.search-box .search-bar {
     display: block;
-    border-radius: 10px;
-    border-color: $black;
-    background-color: $white;
-    background-clip: padding-box;
-    font-size: $fs-14;
-}
-
-button {
     width: 100%;
-    height: 30px;
-    margin-top: 10px;
-    padding-top: 2px;
-    box-sizing: border-box;
-    display: block;
-    border-radius: 10px;
-    border-color: $black;
-    background-color: $white;
-    color: $black;
-    text-decoration: none;
-    font-weight: bold;
-    cursor: pointer;
-    transition: background 0.3s ease-in-out;
+    padding: 15px;
+
+    appearance: none;
+    background: none;
+    border: none;
+    outline: none;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 0px 0px 16px 16px;
+    margin-top: -25px;
+
+    box-shadow: 0px 5px rgba(0, 0, 0, 0.2);
+
+    color: #313131;
+    font-size: 20px;
+
+    transition: 0.4s ease;
 }
 
-// map icon (ajax section)
+.search-box .search-bar:focus {
+    background-color: rgba(255, 255, 255, 0.75);
+}
 
-#map-icon {
+.location-box .location {
+    color: white;
+    font-size: 32px;
+    font-weight: 500;
     text-align: center;
-    margin-top: 10px;
+    text-shadow: 3px 3px rgba(50, 50, 70, 0.5);
 }
 
-// location / country / date & time (ajax section)
-
-#location_country {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-weight: bold;
-    margin-top: 10px;
-    border: $b-off;
-}
-
-#location {
-    margin: 0;
-    border: $b-off;
-}
-
-#country {
-    padding-left: 5px;
-    padding-bottom: 10px;
-    border: $b-off;
-}
-
-#date-time {
+.location-box .date {
+    color: white;
+    font-size: 20px;
+    font-weight: 300;
+    font-style: italic;
     text-align: center;
-    margin-top: 5px;
-    border: $b-off;
+    text-shadow: 2px 2px rgba(50, 50, 70, 0.5);
 }
 
-// weather-icon / temperature 
-
-#weather-icon_temperature {
-    display: flex;
-    flex-flow: row;
-    margin: -10px auto;
-    border: $b-off;
-}
-
-#weather_icon,
-#temp {
-    width: 50%;
-    height: auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: $b-off;
-}
-
-// min. temperature / max. temperature / feels like temperature 
-
-#mix-temp_max-temp_feels-like {
-    display: flex;
-    flex-flow: row;
-    justify-content: center;
-}
-
-.box {
-    flex: 1 auto 1;
-}
-
-.box1,
-.box2,
-.box3 {
-    border: $b-off;
-}
-
-.box1 {
-    text-align: right;
-}
-
-// description
-
-#descr {
+.weather-box {
     text-align: center;
-    margin-top: 5px;
 }
 
-#descr::first-letter {
-    text-transform: uppercase;
+.weather-box .temp {
+    position: relative;
+    display: inline-block;
+    margin: 30px auto;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 16px;
+
+    padding: 15px 25px;
+
+    color: white;
+    font-size: 102px;
+    font-weight: 900;
+
+    text-shadow: 3px 6px rgba(50, 50, 70, 0.5);
+    text-align: center;
+    box-shadow: 3px 6px rgba(0, 0, 0, 0.2);
 }
 
-// other weather data items 
-
-#other-weather-data-items {
-    width: 100%;
-    margin-top: 10px;
-    border: $b-off;
-}
-
-.sunrise,
-.sunset,
-.humidity,
-.pressure,
-.dew-point,
-.uvi,
-.visibility,
-.wind-speed,
-.wind-deg,
-.wind-gust,
-.sea-level-atmospheric-pressure,
-.grnd-level-atmospheric-pressure {
-    font-weight: bold;
-}
-
-#sunrise,
-#sunset,
-#humidity,
-#pressure,
-#dew-point,
-#uvi,
-#visibility,
-#wind-speed,
-#wind-deg,
-#wind-gust,
-#sea-level-atmospheric-pressure,
-#grnd-level-atmospheric-pressure {
-    text-align: right;
-    padding-left: 20px;
-}
-
-ul {
-    list-style: none;
-}
-
-// couple of simple classes 
-
-#none {
-    display: $d-n;
-}
-
-#block {
-    display: $d-b;
+.weather-box .weather {
+    color: white;
+    font-size: 48px;
+    font-weight: 700;
+    text-shadow: 3px 3px rgba(50, 50, 70, 0.5);
 }
