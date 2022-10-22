@@ -41,3 +41,30 @@ https://github.com/mathews1193/weather-app/blob/master/weather-app/src/App.js
   //       return 
   //   }
   // }
+
+
+  
+  const props = {
+    conditionA: (weather.weather[0].id >= 500 && weather.weather[0].id <= 504),
+    conditionB: (weather.weather[0].id >= 801 && weather.weather[0].id <= 804)
+  };
+
+  let value;
+
+  switch (Object.keys(props)[0]) {
+    case "conditionA":
+      value = { img1 };
+      break;
+    case "conditionB":
+      value = { img2 };
+      break;
+    default:
+      value = { img3 };
+  }
+
+  console.log(value);
+  console.log(id);
+
+  import img1 from '../src/img/snow.jpg';
+import img2 from '../src/img/rain.jpg';
+import img3 from '../src/img/fog.jpg';
