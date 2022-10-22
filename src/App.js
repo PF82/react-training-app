@@ -44,8 +44,10 @@ const App = () => {
     return `${day} ${date} ${month} ${year} ${hour}:${min}`
   }
 
+
+  
   return (
-    <div className={(if (weather)) : 'app'}>
+    <div className={(typeof weather.main != "undefined") ? ((weather.weather[0].id >= 500 && weather.weather[0].id <= 504) ? 'app rain' : 'app') : 'app'}>
       <main>
         <div>
           <input
