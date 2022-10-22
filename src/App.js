@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import moment from 'moment';
-
+import './App.scss';
 
 const api = {
   key: '9c61d7516f674d61ce67583b5f1d3f23',
@@ -45,7 +45,7 @@ const App = () => {
   }
 
   return (
-    <div className={(typeof weather.main != "undefined") ? ((weather.main.temp > 16) ? 'app snow' : 'app') : 'app'}>
+    <div className={(if (weather)) : 'app'}>
       <main>
         <div>
           <input
